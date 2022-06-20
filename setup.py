@@ -2,8 +2,7 @@ import os
 import re
 import codecs
 
-from setuptools import find_packages, setup
-
+from setuptools import *
 
 def abs_path(*relative_path_parts):
     return os.path.join(os.path.abspath(os.path.dirname(__file__)),
@@ -12,10 +11,10 @@ def abs_path(*relative_path_parts):
 
 name = 'FUFont'
 
-with codecs.open(abs_path(name, '__init__.py'), 'r', 'utf-8') as fp:
+with codecs.open(abs_path('src', name, '__init__.py'), 'r', 'utf-8') as fp:
     try:
         version = re.findall(r"^__version__ = '([^']+)'.*?$",
-                fp.read(), re.M)[0]
+                             fp.read(), re.M)[0]
     except IndexError:
         raise RuntimeError('Unable to determine version.')
 
@@ -27,8 +26,9 @@ setup(
     author='Corruptware',
     author_email='corruptware@gmail.com',
     description='Beautify any string to your chosen font style',
-    keywords='font, unicode, string, fancy, beautify',
-    packages=find_packages(),
+    keywords='font, unicode, string, fancy, beautify',    
+    package_dir={"": "src"},
+    packages=find_packages(where="src"),
     py_modules=['FUFont'],
     data_files=[('', ['LICENSE'])],
     include_package_data=True,
