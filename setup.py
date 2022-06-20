@@ -10,26 +10,26 @@ def abs_path(*relative_path_parts):
                         *relative_path_parts)
 
 
-name = 'huelog'
+name = 'FUFont'
 
 with codecs.open(abs_path(name, '__init__.py'), 'r', 'utf-8') as fp:
     try:
         version = re.findall(r"^__version__ = '([^']+)'.*?$",
-                             fp.read(), re.M)[0]
+                fp.read(), re.M)[0]
     except IndexError:
         raise RuntimeError('Unable to determine version.')
 
 setup(
     name=name,
     version=version,
-    url='https://github.com/Corruptware/Huelog',
-    download_url='https://github.com/Corruptware/Huelog',
+    url='https://github.com/Corruptware/FUFont',
+    download_url='https://github.com/Corruptware/FUFont',
     author='Corruptware',
     author_email='corruptware@gmail.com',
-    description='Print rainbow in terminals and logs.',
-    keywords='hue, color, terminal color, colorama, log color',
+    description='Beautify any string to your chosen font style',
+    keywords='font, unicode, string, fancy, beautify',
     packages=find_packages(),
-    py_modules=['huelog'],
+    py_modules=['FUFont'],
     data_files=[('', ['LICENSE'])],
     include_package_data=True,
     classifiers=[
