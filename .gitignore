@@ -1,6 +1,5 @@
 #PyPi
 tests/
-src/
 pyproject.toml
 
 # Byte-compiled / optimized / DLL files
