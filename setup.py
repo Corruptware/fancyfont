@@ -9,7 +9,7 @@ def abs_path(*relative_path_parts):
                         *relative_path_parts)
 
 
-name = 'FUFont'
+name = 'fancyfont'
 
 with codecs.open(abs_path('src', name, '__init__.py'), 'r', 'utf-8') as fp:
     try:
@@ -21,15 +21,15 @@ with codecs.open(abs_path('src', name, '__init__.py'), 'r', 'utf-8') as fp:
 setup(
     name=name,
     version=version,
-    url='https://github.com/Corruptware/FUFont',
-    download_url='https://github.com/Corruptware/FUFont',
+    url='https://github.com/Corruptware/fancyfont',
+    download_url='https://github.com/Corruptware/fancyfont',
     author='Corruptware',
     author_email='corruptware@gmail.com',
     description='Beautify any string to your chosen font style',
     keywords='font, unicode, string, fancy, beautify',    
     package_dir={"": "src"},
     packages=find_packages(where="src"),
-    py_modules=['FUFont'],
+    py_modules=['fancyfont'],
     data_files=[('', ['LICENSE'])],
     include_package_data=True,
     classifiers=[
